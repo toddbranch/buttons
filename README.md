@@ -25,3 +25,7 @@ Returns one if button pin is low, zero if button pin is high.
 `void debounce()`
 
 Delays for 1000 clock cycles.
+
+## License
+
+Anyone is free to use and modify this for any purpose, provided they document it.
