@@ -1,3 +1,8 @@
+//
+// Example program demonstrating the use of button.h
+// Toggles Launchpad LEDs on each button push
+//
+
 #include <msp430g2553.h>
 #include "button.h"
 
