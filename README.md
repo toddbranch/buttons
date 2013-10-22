@@ -6,9 +6,17 @@ Example code included in main.c.
 
 ## Functions
 
-`void configureP1PinAsButton(char pin)`
-
-Configures pin as input with internal pull-up resistor.
+- `void configureP1PinAsButton(char pin)`
+    - Configures pin as input with internal pull-up resistor
+    - Pin settings
+        - P1DIR = 0 (input)
+        - P1REN = 1 (enable internal pull-up/pull-down networks)
+        - P1OUT = 1 (configure as pull-up)
+    - Usage:
+        - `configureP1PinAsButton(BIT3);`
+            - Configures Port 1, Pin 3 as button
+        - `configureP1PinAsButton(BIT0|BIT1|BIT2);`
+            - Configures Port 1, Pins 0, 1, and 2 as button
 
 `char isP1ButtonReleased(char pin)`
 
