@@ -1,11 +1,11 @@
 # button
-
 Library for working with buttons on the MSP430.
-
 Example code included in main.c.
 
-## Functions
+## General Notes
+Assumes buttons are active low.  Configures with internal pull-up resistor if button open state is floating.
 
+## Functions
 - `void configureP1PinAsButton(char pin)`
     - Configures pin as input with internal pull-up resistor
     - Pin settings
@@ -17,23 +17,29 @@ Example code included in main.c.
             - Configures Port 1, Pin 3 as button
         - `configureP1PinAsButton(BIT0|BIT1|BIT2);`
             - Configures Port 1, Pins 0, 1, and 2 as button
-
-`char isP1ButtonReleased(char pin)`
-
-Returns one if button pin is high, zero if button pin is low.
-
-`void waitForP1ButtonRelease(char pin)`
-
-Blocks while button pin is low.  Debounces on release.
-
-`char isP1ButtonPressed(char pin)`
-
-Returns one if button pin is low, zero if button pin is high.
-
-`void debounce()`
-
-Delays for 1000 clock cycles.
+- `char isP1ButtonReleased(char pin)`
+    - Returns one if pin is high, zero if pin is low
+    - Usage:
+        - `isP1ButtonReleased(BIT3);`
+            - Returns 1 if released
+            - Returns 0 if pressed
+- `void waitForP1ButtonRelease(char pin)`
+    - Blocks until detects pin going high
+    - Debounces after detection
+    - Usage:
+        - `waitForP1ButtonRelease(BIT3);`
+            - Blocks until pin 3 is high, debounces
+- `char isP1ButtonPressed(char pin)`
+    - Returns one if pin is low, zero if pin is high.
+    - Usage:
+        - `isP1ButtonPressed(BIT3);`
+            - Returns 1 if pressed
+            - Returns 0 if released
+- `void debounce()`
+    - Delays for 1000 clock cycles.
+    - Time length depends on clock speed, but 1ms with 1MHz clock.
+    - Usage:
+        - `debounce();`
 
 ## License
-
 Anyone is free to use and modify this for any purpose, provided they document it.
