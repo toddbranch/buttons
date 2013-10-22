@@ -21,6 +21,11 @@ void waitForP1ButtonRelease(char pin);
 char isP1ButtonPressed(char pin);
 
 //
+// Polls one or more buttons for press, returns bit mask of pressed button
+//
+char pollP1Buttons(char buttonsToPoll[], char numberOfButtonsToPoll);
+
+//
 // Delays for 1000 clock cycles.
 //
 void debounce();

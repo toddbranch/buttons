@@ -1,6 +1,8 @@
 #include <msp430.h>
 #include "button.h"
 
+#define TRUE 1
+
 void configureP1PinAsButton(char pin)
 {
     P1DIR &= ~pin;
@@ -22,6 +24,21 @@ void waitForP1ButtonRelease(char pin)
 char isP1ButtonPressed(char pin)
 {
     return !(P1IN & pin);
+}
+
+char pollP1Buttons(char buttonsToPoll[], char numberOfButtonsToPoll)
+{
+    int i;
+
+    while (TRUE)
+    {
+        for (i = 0; i < numberOfButtonsToPoll; i++) {
+            if (isP1ButtonPressed(buttonsToPoll[i]))
+            {
+                return buttonsToPoll[i];
+            }
+        }
+    }
 }
 
 void debounce()
