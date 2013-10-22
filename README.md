@@ -38,12 +38,14 @@ Assumes buttons are active low.  Configures with internal pull-up resistor if bu
 - `char pollP1Buttons(char buttonsToPoll[], char numberOfButtonsToPoll)`
     - Blocks until button is pushed, returns bit mask of pressed button
     - Usage:
+        - Blocks until one of buttons is pushed
+        - `pressedButton` is set to mask of pushed button
+
 ```
 char buttons[] = {BIT1, BIT2, BIT3};
 char pressedButton = pollP1Buttons(buttons, 3);
 ```
-            - Blocks until one of buttons is pushed
-            - `pressedButton` is set to mask of pushed button
+
 - `void debounce()`
     - Delays for 1000 clock cycles.
     - Time length depends on clock speed, but 1ms with 1MHz clock.
