@@ -6,7 +6,7 @@
 #include <msp430g2553.h>
 #include "button.h"
 
-int main()
+int exampleMain()
 {
 
     WDTCTL = WDTPW|WDTHOLD;
