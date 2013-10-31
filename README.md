@@ -45,7 +45,9 @@ Assumes buttons are active low.  Configures with internal pull-up resistor if bu
 char buttons[] = {BIT1, BIT2, BIT3};
 char pressedButton = pollP1Buttons(buttons, 3);
 ```
-
+- `char checkP1Buttons(char buttonsToCheck[], char numberOfButtonsToCheck);`
+	- Checks set of buttons for press, returns bit mask of pressed button
+	- Do this if you don't want to block
 - `void debounce()`
     - Delays for 1000 clock cycles.
     - Time length depends on clock speed, but 1ms with 1MHz clock.

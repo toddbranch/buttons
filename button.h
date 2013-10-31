@@ -25,6 +25,10 @@ char isP1ButtonPressed(char pin);
 //
 char pollP1Buttons(char buttonsToPoll[], char numberOfButtonsToPoll);
 
+//
+// Checks one or more buttons for press, returns bit mask of pressed button
+// Returns 0 if no buttons is pressed
+//
 char checkP1Buttons(char buttonsToCheck[], char numberOfButtonsToCheck);
 
 //
