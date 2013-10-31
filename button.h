@@ -1,6 +1,9 @@
 #ifndef _BUTTON_H
 #define _BUTTON_H
 
+#define TRUE 1
+#define FALSE 0
+
 //
 // Configures pin as input with internal pull-up resistor.
 //

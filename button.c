@@ -1,8 +1,6 @@
 #include <msp430.h>
 #include "button.h"
 
-#define TRUE 1
-
 void configureP1PinAsButton(char pin)
 {
     P1DIR &= ~pin;
