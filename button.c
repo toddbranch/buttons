@@ -45,10 +45,10 @@ char checkP1Buttons(char buttonsToCheck[], char numberOfButtonsToCheck)
 {
 	int i;
 
-	for (i = 0; i < numberOfButtonsToPoll; i++) {
-		if (isP1ButtonPressed(buttonsToPoll[i]))
+	for (i = 0; i < numberOfButtonsToCheck; i++) {
+		if (isP1ButtonPressed(buttonsToCheck[i]))
 		{
-			return buttonsToPoll[i];
+			return buttonsToCheck[i];
 		}
 	}
 
