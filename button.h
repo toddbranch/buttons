@@ -25,6 +25,8 @@ char isP1ButtonPressed(char pin);
 //
 char pollP1Buttons(char buttonsToPoll[], char numberOfButtonsToPoll);
 
+char checkP1Buttons(char buttonsToCheck[], char numberOfButtonsToCheck);
+
 //
 // Delays for 1000 clock cycles.
 //

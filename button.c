@@ -41,6 +41,20 @@ char pollP1Buttons(char buttonsToPoll[], char numberOfButtonsToPoll)
     }
 }
 
+char checkP1Buttons(char buttonsToCheck[], char numberOfButtonsToCheck)
+{
+	int i;
+
+	for (i = 0; i < numberOfButtonsToPoll; i++) {
+		if (isP1ButtonPressed(buttonsToPoll[i]))
+		{
+			return buttonsToPoll[i];
+		}
+	}
+
+	return FALSE;
+}
+
 void debounce()
 {
     __delay_cycles(1000);
