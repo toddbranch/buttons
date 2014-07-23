@@ -1,6 +1,6 @@
 # button
 Library for working with buttons on the MSP430.
-Example code included in main.c.
+Example code included in `example.c`.
 
 ## General Notes
 Assumes buttons are active low.  Configures with internal pull-up resistor if button open state is floating.
